@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -257,7 +257,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-11T08:34:44+08:00">
                 2018-03-11
@@ -304,11 +304,13 @@
 <p>4.启动server，即可在本地访问<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></p>
 <p>5.如何写博客<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new 博客开张.md //新建博客</span><br><span class="line">$ start source/_posts/博客开张.md //自动打开博客，可以使用md格式写博客啦！</span><br></pre></td></tr></table></figure></p>
 <p>6.至此，本地Hexo博客已经搭建完成了。</p>
-<h4 id="Hexo博客部署至github"><a href="#Hexo博客部署至github" class="headerlink" title="Hexo博客部署至github"></a>Hexo博客部署至github</h4><p>0.在github账号上新建空仓库（create a new repository），仓库名repo为[你的用户名.github.io]<br>1.打开根目录myBlog下的_config.yml文件，配置最后的deploy<br>1.1把最后一行的type改成type: git<br>1.2最后一行后面新增一行，左边与type对齐，加上一行<figure class="highlight plain"><figcaption><span>仓库地址```（仓库地址为：git@github.com:xxx/xxx.github.io.git）</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2.安装git部署插件</span><br></pre></td></tr></table></figure></p>
-<p>$ npm install hexo-deployer-git –save<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3.将博客部署到服务器上（github）</span><br></pre></td></tr></table></figure></p>
-<p>$ hexo deploy<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4.这样就可以用GitHub Pages打开博客了，至此Hexo博客部署至github完成了。</span><br><span class="line"></span><br><span class="line">##### 在上面一步部署的过程中，很有可能会报错，我遇到的原因可能是几种。</span><br><span class="line">1.本地与github没有建立通信。</span><br><span class="line">生成公私钥</span><br></pre></td></tr></table></figure></p>
-<p>$ ssh-keygen -t rsa -C “$your_email”<br><code>通过所提示的公私钥路径，把公钥的内容拷贝到github上（Settting--SSH and GPG key--New SSH key）
-能通信以后，还要把本地库推送到远程库上（远程库不是自己想要的，可删除</code>$ git remote remove origin<code>`</code>）</p>
+<h4 id="Hexo博客部署至github"><a href="#Hexo博客部署至github" class="headerlink" title="Hexo博客部署至github"></a>Hexo博客部署至github</h4><p>0.在github账号上新建空仓库（create a new repository），仓库名repo为[你的用户名.github.io]<br>1.打开根目录myBlog下的_config.yml文件，配置最后的deploy<br>1.1把最后一行的type改成type: git<br>1.2最后一行后面新增一行，左边与type对齐，加上一行 [repo: 仓库地址] ,仓库地址为：<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:xxx/xxx.github.io.git）<br>2.安装git部署插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p>3.将博客部署到服务器上（github）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></p>
+<p>4.这样就可以用GitHub Pages功能，打开博客了，至此Hexo博客部署至github完成了。</p>
+<h6 id="在上面第三步部署的过程中，很有可能会报错，下面是我遇到的原因。"><a href="#在上面第三步部署的过程中，很有可能会报错，下面是我遇到的原因。" class="headerlink" title="在上面第三步部署的过程中，很有可能会报错，下面是我遇到的原因。"></a>在上面第三步部署的过程中，很有可能会报错，下面是我遇到的原因。</h6><p>本地与github没有建立通信。<br>生成公私钥<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &quot;$your_email&quot;</span><br></pre></td></tr></table></figure></p>
+<p>通过所提示的公私钥路径，把公钥的内容拷贝到github上（Settting–SSH and GPG key–New SSH key）</p>
+<h4 id="第二篇博客"><a href="#第二篇博客" class="headerlink" title="第二篇博客"></a>第二篇博客</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new 第二篇博客</span><br><span class="line">start xxxx.md //xxx为第二篇博客的相对路径</span><br><span class="line">hexo generate //使用hexo生成静态文件</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<h4 id="换主题"><a href="#换主题" class="headerlink" title="换主题"></a>换主题</h4><p>1.<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="noopener">https://github.com/hexojs/hexo/wiki/Themes</a> 上面有主题合集<br>2.随便找一个主题，进入主题的 GitHub 首页，比如我找的是 <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">https://github.com/iissnan/hexo-theme-next</a><br>3.复制它的 SSH 地址或 HTTPS 地址，假设地址为 <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:iissnan/hexo-theme-next.git<br>4.cd themes<br>5.git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:iissnan/hexo-theme-next.git<br>6.cd ..<br>7.将 _config.yml 的第 75 行改为 theme: hexo-theme-next，保存<br>8.hexo generate<br>9.hexo deploy</p>
 
           
         
@@ -386,7 +388,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-10T18:24:16+08:00">
                 2018-03-10
@@ -506,7 +508,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-10T18:21:41+08:00">
                 2018-03-10
@@ -639,7 +641,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -689,7 +691,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
